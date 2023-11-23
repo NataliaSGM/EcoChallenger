@@ -8,7 +8,7 @@ module.exports = [
     
   },
   {
-    text: "Reduce “phantom drain” energy consumption. Studies show that 35% of residential energy used is wasted. Save energy by turning off lights and unplugging appliances (even eco-friendly chargers) when not in use.",
+    text: "Reduce “phantom drain” energy consumption. Save energy by turning off lights and unplugging appliances (even eco-friendly chargers) when not in use.",
     
   },
   {
@@ -16,7 +16,7 @@ module.exports = [
     
   },
   {
-    text: "Air dry your clothes. Not only is hang-drying environmentally friendly, but it will also save you 24 and 72 cents per hour you would otherwise use the dryer, depending on the model..",
+    text: "Air dry your clothes. Not only is hang-drying environmentally friendly, but it will also save you 24 and 72 cents per hour you would otherwise use the dryer, depending on the model.",
     
   },
   {
@@ -24,7 +24,7 @@ module.exports = [
     
   },
   {
-    text: "Consider going meat-free. Studies show that a plant-based diet can reduce food's carbon footprint by 73%. Adopting a vegan and cruelty-free lifestyle (or even just reducing your meat consumption) reduces energy consumption, supports clean waterways, and reduces the pressure on overfished oceans. ",
+    text: "Consider going meat-free. Studies show that a plant-based diet can reduce food's carbon footprint by 73%.",
    
   },
   {
@@ -48,7 +48,7 @@ module.exports = [
     
   },
   {
-     text: "Air dry your clothes. Not only is hang-drying environmentally friendly, but it will also save you 24 and 72 cents per hour you would otherwise use the dryer, depending on the model..",
+     text: "Air dry your clothes. Not only is hang-drying environmentally friendly, but it will also save you 24 and 72 cents per hour you would otherwise use the dryer, depending on the model.",
     
   },
   {

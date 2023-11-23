@@ -6,7 +6,8 @@ import {
   ACCEPT_CHALLENGE,
   ADD_TO_CHALLENGES_LIST,
   DELETE_CHALLENGE,
-  ADD_OWN_CHALLENGE
+  ADD_OWN_CHALLENGE,
+  FETCH_JOKE
 } from '../actions';
 
 
@@ -49,9 +50,22 @@ export const challengesListReducer = (state = initialChallengesListState, action
   }
 };
 
+const initialJokeState: string = '';
+
+export const jokeReducer = (state = initialJokeState, action: any) => {
+  switch (action.type) {
+    case FETCH_JOKE:
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+
 const reducers = combineReducers({
   challenge: challengeReducer,
   challengesList: challengesListReducer,
+  joke: jokeReducer
 });
 
 export default reducers;
