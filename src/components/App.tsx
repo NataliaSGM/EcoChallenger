@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { Button, Container, Card, ListGroup } from 'react-bootstrap';
+import { Button, Container, Card, ListGroup, Row, Col } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
@@ -46,13 +46,11 @@ class App extends Component<AppProps, AppState> {
       }, 
       isOpen: false,  
       isCheckBoxChecked: false,
-      joke: ''
-      
+      joke: '',      
     }
   }
   componentDidMount() {
-    this.props.setChallenge(randomChallenge());
-    this.props.fetchJoke()    
+    this.props.setChallenge(randomChallenge());      
   }
 
   generateNewChallenge = () => {
@@ -84,12 +82,13 @@ class App extends Component<AppProps, AppState> {
     this.setState({isCheckBoxChecked: event.target.checked}, () => {
       if (this.state.isCheckBoxChecked) {
         this.props.fetchJoke();
-        this.setState({isOpen: true});
+        this.setState({isOpen: true});        
       }
     });
   }
 
   renderJokeWindow = () => {  
+    
     return (
       <div> 
         <Modal show={this.state.isOpen} onHide={() => this.setState({isOpen: false})}>
@@ -98,19 +97,24 @@ class App extends Component<AppProps, AppState> {
           </Modal.Header>
           <Modal.Body>{this.props.joke}</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={() => this.setState({isOpen: false})}>
+            <Button 
+            variant="secondary" 
+            onClick={() =>  this.setState({isOpen: false})}>
               Close
             </Button>
           </Modal.Footer>
         </Modal>    
       </div>
-    );  
+    ); 
+
   }   
   
   render() {
     return (
       <Container className="d-flex justify-content-center">        
-        {this.state.isOpen ? this.renderJokeWindow() : null}       
+        {this.state.isOpen ? this.renderJokeWindow() : null}  
+        <Row>   
+        <Col className='firstCol' xs={12} lg={6}>
           <Container className="d-flex mx-auto my-5" > 
                 <Container className='text-center'>
                   <Card className='text-center' style={{ width: '100%' }}>
@@ -151,11 +155,12 @@ class App extends Component<AppProps, AppState> {
                       }
                     });
                   }}>Add</Button>
-                  </Card>        
+                  </Card>                          
                 </Container>             
-                  
-          </Container>
-
+                
+               </Container>
+              </Col> 
+              <Col className='secondCol' xs={12}  lg={6}>
                 <Container className="d-flex justify-content-center">                
                 <Container className="d-flex mx-auto my-5">
                   <Container>
@@ -167,9 +172,10 @@ class App extends Component<AppProps, AppState> {
                       {this.props.challengesList.map((challenge, index) => (
                         <ListGroup.Item key={index} style={{backgroundColor: '#F5DEB3'}}>
                           {challenge.text}
-                          <Form.Check className="my-2 text-muted" 
+                          <Form.Check 
+                          className="my-2 text-muted" 
                           type="checkbox" 
-                          id="checkbox" 
+                          id={`checkbox-${index}`} 
                           label="challenge completed"                          
                           onChange={this.handleCheckboxChange} />
                           <Button
@@ -184,6 +190,8 @@ class App extends Component<AppProps, AppState> {
                   </Container>                  
                 </Container>                
                 </Container>
+                </Col>
+                </Row>  
       </Container>
     );
   }
