@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Go to the Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://eco-challenger.onrender.com
 
 ## Available Scripts
 
